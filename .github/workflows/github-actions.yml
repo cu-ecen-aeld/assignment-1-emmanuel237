@@ -12,6 +12,8 @@ jobs:
         steps:
           - uses: actions/checkout@v2
           - name: Checkout submodules
+            env :
+            GH_TOKEN: "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"
             run : git submodule update --init --recursive
           - name: Run unit test
             run: ./unit-test.sh
