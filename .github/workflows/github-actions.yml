@@ -12,7 +12,8 @@ jobs:
         steps:
           - uses: actions/checkout@v2
             with:
-              token: ${{ secrets.SECRET_TOKEN }}
+              lfs: true
+              token: ${{ secrets.ACCESS_TOKEN }}
           - name: Checkout submodules
             run : git submodule update --init --recursive
           - name: Run unit test
@@ -23,7 +24,8 @@ jobs:
         steps:
           - uses: actions/checkout@v2
             with:
-              token: ${{ secrets.SECRET_TOKEN }}
+              lfs: true
+              token: ${{ secrets.ACCESS_TOKEN }}
           - name: Checkout submodules       
             run : git submodule update --init --recursive
           - name: Run full test
